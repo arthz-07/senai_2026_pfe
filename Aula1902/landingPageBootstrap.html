@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Pro Gol Academy</title>
+
+    <style>
+        :root {
+            --azul-progol: #262635;
+            --vermelho-progol: #b30d3b;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .bg-progol {
+            background-color: var(--azul-progol);
+        }
+
+        .text-progol {
+            color: var(--vermelho-progol);
+        }
+
+        .btn-progol {
+            background-color: var(--vermelho-progol);
+            color: white;
+            border: none;
+        }
+
+        .btn-progol:hover {
+            background-color: #8e0a2e;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(38,38,53,0.9), rgba(38,38,53,0.9)),
+            url('./Imagens/img1.jpg') center/cover no-repeat;
+            color: white;
+            padding: 120px 0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        footer {
+            background-color: var(--azul-progol);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-progol navbar-dark shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">PRO GOL ACADEMY</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sobre">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#modalidades">Treinos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-progol ms-3 px-3" href="#">Inscreva-se</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero text-center">
+    <section class="bg-dark py-5">
+  <div class="container">
+
+    <div id="carouselProGol" class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel">
+
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselProGol" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselProGol" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselProGol" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="./Imagens/img1.png" class="d-block w-100" alt="02 anos Pro Gol">
+
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 p-3">
+            <h2 class="fw-bold text-danger">02 ANOS</h2>
+            <p>Do início de uma trajetória vitoriosa!</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="./Imagens/img2.png" class="d-block w-100" alt="Rematrícula Premiada">
+
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 p-3">
+            <h2 class="fw-bold text-danger">Rematrícula Premiada</h2>
+            <p>Os 10 primeiros matriculados ganham uniforme oficial.</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="./Imagens/img3.png" class="d-block w-100" alt="Patrocinadores 2026">
+
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 p-3">
+            <h2 class="fw-bold text-danger">Temporada 2026</h2>
+            <p>Conheça nossos patrocinadores oficiais.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselProGol" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselProGol" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+
+  </div>
+</section>
+    <div class="container">
+        <h1 class="display-4 fw-bold">Transformando Sonhos em Jogadores</h1>
+        <p class="lead mt-3">Treinamento de alto nível para atletas que querem evoluir no futebol.</p>
+        <a href="#" class="btn btn-progol btn-lg mt-3 px-4">Comece Agora</a>
+    </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold text-progol mb-4">Sobre a Pro Gol Academy</h2>
+        <p class="fs-5">
+            A Pro Gol Academy é referência no desenvolvimento técnico, físico e mental de atletas.
+            Nosso objetivo é preparar jogadores para avaliações, competições e oportunidades profissionais.
+        </p>
+    </div>
+</section>
+
+<!-- MODALIDADES -->
+<section id="modalidades" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center fw-bold text-progol mb-5">Nossos Treinos</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card shadow h-100 text-center p-3">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Treino Técnico</h5>
+                        <p class="card-text">Fundamentos, domínio, passe, finalização e controle de jogo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow h-100 text-center p-3">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Treino Físico</h5>
+                        <p class="card-text">Velocidade, resistência e preparação física específica para o futebol.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow h-100 text-center p-3">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Avaliações</h5>
+                        <p class="card-text">Preparação para testes em clubes e competições oficiais.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="py-5 text-center bg-progol text-white">
+    <div class="container">
+        <h2 class="fw-bold">Pronto para subir de nível?</h2>
+        <p class="mb-4">Faça parte da Pro Gol Academy e evolua como atleta.</p>
+        <a href="#" class="btn btn-progol btn-lg px-5">Quero Fazer Parte</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-4 text-center">
+    <div class="container">
+        <p class="mb-0">© 2026 Pro Gol Academy • Todos os direitos reservados</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
