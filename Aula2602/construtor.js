@@ -10,5 +10,5 @@ class Estudande{
     }
 }
 
-const Amorim = new Estudande('Arthur Amorim', 5896, 30434357601)
+const Amorin = new Estudande('Arthur Amorim', 5896, 30434357601)
 console.log(Amorim);
