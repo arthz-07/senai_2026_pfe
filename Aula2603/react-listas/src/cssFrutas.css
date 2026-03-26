@@ -1,0 +1,124 @@
+/* Reset básico e tipografia moderna */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #350053, #a200ff);
+    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+}
+
+/* Container centralizado com sombra realista */
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* Título elegante */
+.titulo {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.titulo::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #3b82f6;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* Lista de frutas */
+.lista {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Card de cada fruta */
+.item {
+    display: flex;
+    flex-direction: column;
+    padding: 18px 22px;
+    background: linear-gradient(145deg, #ffffff, #f7f9fc);
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-left: 6px solid #7700ff;
+}
+
+.item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.item p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.4;
+}
+
+/* Hover suave para cada card */
+.item:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+    border-left-color: #e600ff; /* muda a cor do destaque no hover */
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+    .container {
+        padding: 20px;
+    }
+
+    .titulo {
+        font-size: 1.6rem;
+    }
+
+    .item h3 {
+        font-size: 1.1rem;
+    }
+
+    .item p {
+        font-size: 0.9rem;
+    }
+}
+
+.item.maça h3 { color: #ff3b3b; }
+.item.banana h3 { color: #ffdd57; }
+.item.laranja h3 { color: #ff9f0d; }
+.item.abacaxi h3 { color: #e9c705; }
+.item.uva h3 { color: #6f2da8; }
+.item.morango h3 { color: #ff4d6d; }
+.item.pera h3 { color: #a0e000; }
