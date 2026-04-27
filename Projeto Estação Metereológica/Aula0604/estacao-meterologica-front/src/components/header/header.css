@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+/* Reset e fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Container principal do Dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #041A14; /* Verde muito escuro */
+    color: #ECFDF5; /* Texto clarinho */
+    padding: 20px;
+}
+
+/* Cabeçalho interno do Dashboard */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #020C0A; /* Card escuro */
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #10B981; /* Verde vibrante */
+}
+
+/* Cards ou seções dentro do dashboard */
+.dashboard-card {
+    background-color: #020C0A;
+    border: 1px solid #065F46;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Título do card */
+.dashboard-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ECFDF5;
+    margin-bottom: 20px;
+}
+
+/* Botões do dashboard */
+.btn-dashboard {
+    padding: 14px 20px;
+    background-color: #10B981;
+    color: #020C0A;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-dashboard:hover {
+    background-color: #34D399;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-card {
+        padding: 20px;
+    }
+}
+
+nav {
+    margin-left: auto; /* empurra o menu pra direita */
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #00ff99;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}

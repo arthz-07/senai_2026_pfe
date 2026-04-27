@@ -2,23 +2,25 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import imgEstacao from '../../assets/estacao.png';
-import './login.css';
+import './register.css';
 
-export default function Login() {
+export default function Register() {
 
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
+    const [confirmaSenha, setConfirmaSenha] = useState('');
+
     const [erro, setErro] = useState('');
     const [loading, setLoading] = useState(false);
     const [mostrarSenha, setMostrarSenha] = useState(false);
-    const usuarioErro = usuario.length > 0 && usuario.length < 3;
-    const senhaErro = senha.length > 0 && senha.length < 3;
 
     const navigate = useNavigate();
 
-    const isFormValid = usuario.length >= 3 && senha.length >= 3;
+    const senhaForte = senha.length >= 6;
+    const senhaConfere = senha === confirmaSenha;
+    const isFormValid = usuario.length >= 3 && senhaForte && senhaConfere;
 
-    async function handleLogin(e) {
+    async function handleRegister(e) {
         e.preventDefault();
 
         if (!isFormValid) {
@@ -30,12 +32,10 @@ export default function Login() {
         setLoading(true);
 
         setTimeout(() => {
-            if (usuario === "admin" && senha === "123") {
-                navigate("/dashboard");
-            } else {
-                setErro("Usuário ou senha inválidos.");
-            }
+            console.log("Usuário cadastrado:", usuario);
+
             setLoading(false);
+            navigate("/");
         }, 1200);
     }
 
@@ -56,38 +56,35 @@ export default function Login() {
                 <div className="login-form-side">
                     <div className="form-wrapper">
 
-                        <h2>Login</h2>
-                        <p>Acesse sua conta</p>
+                        <h2>Criar conta</h2>
+                        <p>Cadastre-se para acessar o sistema</p>
 
-                        <form onSubmit={handleLogin} noValidate>
+                        <form onSubmit={handleRegister} noValidate>
 
                             {/* USUÁRIO */}
-                            <div className={`input-group ${usuarioErro ? "error" : ""}`}>
+                            <div className={`input-group ${erro ? "error" : ""}`}>
                                 <FaUser className="input-icon" />
-                                <input 
+                                <input
                                     type="text"
                                     placeholder="Usuário"
                                     value={usuario}
                                     onChange={(e) => setUsuario(e.target.value)}
                                     autoComplete="username"
-                                    aria-label="Usuário"
                                 />
                             </div>
 
                             {/* SENHA */}
-                            <div className={`input-group ${senhaErro ? "error" : ""}`}>
+                            <div className={`input-group ${erro ? "error" : ""}`}>
                                 <FaLock className="input-icon" />
 
-                                <input 
+                                <input
                                     type={mostrarSenha ? "text" : "password"}
                                     placeholder="Senha"
                                     value={senha}
                                     onChange={(e) => setSenha(e.target.value)}
-                                    autoComplete="current-password"
-                                    aria-label="Senha"
                                 />
 
-                                <span 
+                                <span
                                     className="toggle-password"
                                     onClick={() => setMostrarSenha(!mostrarSenha)}
                                 >
@@ -95,21 +92,37 @@ export default function Login() {
                                 </span>
                             </div>
 
+                            {/* CONFIRMAR SENHA */}
+                            <div className={`input-group ${erro ? "error" : ""}`}>
+                                <FaLock className="input-icon" />
+                                <input
+                                    type="password"
+                                    placeholder="Confirmar senha"
+                                    value={confirmaSenha}
+                                    onChange={(e) => setConfirmaSenha(e.target.value)}
+                                />
+                            </div>
+
+                            {/* FORÇA DA SENHA */}
+                            <div className={`password-strength ${senhaForte ? "strong" : "weak"}`}>
+                                {senha.length === 0 ? "" : senhaForte ? "Senha forte" : "Mínimo 6 caracteres"}
+                            </div>
+
                             {/* ERRO */}
                             {erro && <div className="erro-msg">{erro}</div>}
 
                             {/* BOTÃO */}
-                            <button 
-                                type="submit" 
+                            <button
+                                type="submit"
                                 className="btn-login"
                                 disabled={!isFormValid || loading}
                             >
-                                {loading ? <span className="spinner"></span> : "Entrar"}
+                                {loading ? <span className="spinner"></span> : "Cadastrar"}
                             </button>
 
                             <div className="form-footer">
                                 <span>
-                                    Não tem conta? <Link to="/register">Cadastre-se</Link>
+                                    Já tem conta? <Link to="/">Fazer login</Link>
                                 </span>
                             </div>
 
