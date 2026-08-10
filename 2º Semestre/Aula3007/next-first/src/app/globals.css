@@ -1,0 +1,38 @@
+@import "./styles/variables.css";
+@import "./styles/reset.css";
+
+body{
+
+    font-family:var(--font-text);
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+.container{
+
+    width:min(92%,var(--container));
+
+    margin:auto;
+
+}
+
+section{
+
+    padding:140px 0;
+
+}
+
+h1,h2,h3,h4{
+
+    font-family:var(--font-title);
+
+}
+
+img{
+
+    user-select:none;
+
+}
